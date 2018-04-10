@@ -110,4 +110,4 @@ If you try to use `vg pack` on long read alignments you may get strange SDSL err
 
 ### Back
 
-Back to [first page](https://gtpb.github.io/CPANG18/).
+Back to [main page](https://gtpb.github.io/CPANG18/).
