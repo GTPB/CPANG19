@@ -38,11 +38,6 @@ This course is oriented towards biologists and bioinformaticians with at least a
 
 ### [Download full course](assets/CPANG18.zip){: .btn}
 
-{% include button.html url="assets/CPANG18.zip" %}
-
-<!-- Place this tag where you want the button to render. -->
-<a class="github-button" href="assets/CPANG18.zip" data-icon="octicon-cloud-download" data-size="large" aria-label="Download gtpb/cpang18 on GitHub">Download</a>
-
 ---
 
 The source for this course webpage is [on github](https://github.com/GTPB/CPANG18).
