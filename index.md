@@ -13,19 +13,19 @@ This course is oriented towards biologists and bioinformaticians with at least a
 
 ## Detailed Program
 ### Day 1
-#### [Intro slides](assets/day1-intro.pdf)
-#### [Full slide deck](assets/CPANG18_Computational_Pangenomics_2018_(day1).pdf)
+#### [Intro slides](assets/day1-intro.pdf) [PDF Download]
+#### [Slides](assets/CPANG18_Computational_Pangenomics_2018_(day1).pdf) [PDF Download]
 #### Practical 1: [toy examples](pages/toy_examples.html)
 ### Day 2
-#### [Slides](assets/Computational_Pangenomics_CPANG18-(day2).pdf)
+#### [Slides](assets/Computational_Pangenomics_CPANG18-(day2).pdf) [PDF Download]
 #### Practical 2: [HIV](pages/HIV_exercises.html)
 ### Day 3
-#### [Slides](assets/Computational_Pangenomics_CPANG18-(day3).pdf)
+#### [Slides](assets/Computational_Pangenomics_CPANG18-(day3).pdf) [PDF Download]
 #### Practical 3: [Bacteria](pages/bacteria.html)
 ### Day 4
-#### [Slides](assets/Computational_Pangenomics_CPANG18-(day4).pdf)
-#### [Practical overview](assets/Alignment_methods_for_graph_construction.pdf)
-#### [Theory slides](assets/Graph_genome_theory_slides.pdf)
+#### [Slides](assets/Computational_Pangenomics_CPANG18-(day4).pdf) [PDF Download]
+#### [Practical overview](assets/Alignment_methods_for_graph_construction.pdf) [PDF Download]
+#### [Theory slides](assets/Graph_genome_theory_slides.pdf) [PDF Download]
 #### Practical 4: [MHC](pages/mhc.html)
 
 ---
