@@ -45,4 +45,4 @@ How could you use these variant calls to determine which MHC scaffold(s) are mos
 
 ## Back
 
-Back to [first page](https://gtpb.github.io/CPANG18/).
+Back to [main page](https://gtpb.github.io/CPANG18/).
