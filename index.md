@@ -36,4 +36,8 @@ This course is oriented towards biologists and bioinformaticians with at least a
 
 ---
 
+### [Download contents](
+
+---
+
 The source for this course webpage is [on github](https://github.com/GTPB/CPANG18).
