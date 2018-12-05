@@ -1,6 +1,7 @@
 ## CPANG18 Computational PANGenomics
 
 ###  Instituto Gulbenkian de Ciência (IGC) - Oeiras, Portugal - March 6<sup>th</sup> - March 9<sup>th</sup> 2018
+Go to the [course oficial website](http://gtpb.igc.gulbenkian.pt/bicourses/2018/ELB18S/)
 
 ---
 
