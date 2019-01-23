@@ -14,6 +14,8 @@ In this exercise you learn how to
 - create an index structure needed for read mapping using `vg index`,
 - map reads to the graph using `vg map`.
 
+<br/>
+
 ### Getting started
 
 Make sure you have vg installed. It is already available on the course workstations. If you want to bulid it on your laptop, follow the instructions at the [vg homepage](https://github.com/vgteam/vg) (note that building vg and all submodules from source can take ~1h). In this exercise, you will use small toy examples from the `test` directory. So make sure you have checked out vg:
@@ -25,6 +27,8 @@ Now create a directory to work on for this tutorial:
 	mkdir exercise1
 	cd exercise1
 	ln -s ../vg/test/tiny
+
+<br/>
 
 ### Constructing and viewing your first graphs
 
@@ -78,6 +82,8 @@ Another tool that comes with the graphviz package is *Neato*. It creates force-d
 	vg view -dpS tiny.ref.vg | neato -Tpdf -o tiny.pdf
 
 For these small graphs, the difference it not that big, but for more involved cases, these layouts can be much easier to read.
+
+<br/>
 
 ### Mapping reads to a graph
 Ok, let's step up to a slightly bigger example.
@@ -134,6 +140,8 @@ In contrast, if we were to set a very high minimum match length we would throw a
     vg map -k 51 -x z.xg -g z.gcsa -G z.sim --compare -j | jq .correct | sed s/null/0/ | awk '{i+=$1; n+=1} END {print i/n}'
 
 It is essential to understand that our alignment process works against the graph which we have constructed. This pattern allows us to quickly understand if the particular graph and configuration of the mapper produce sensible results at least given a simulated alignment set. Note that the alignment comparison will break down if we simulate from different graphs, as it depends on the coordinate system of the given graph.
+
+<br/>
 
 ### Exploring the benefits of graphs for read mapping
 
@@ -197,6 +205,8 @@ Let's dig into some of the more-highly differentiated reads to understand why vg
 - `vg mod -g ID -x N GRAPH.vg` : extract the subgraph that is within `N` nodes from node `ID`
 - `vg mod -P -i ALN.gam GRAPH.vg` : add the paths from the alignment into the graph (similar to the reference path in the exercise)
 
+<br/>
+
 ### Back
 
-Back to [main page](https://gtpb.github.io/CPANG18/).
+Back to [first page](../index.md).
