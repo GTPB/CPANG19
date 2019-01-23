@@ -100,7 +100,7 @@ Currently, there are two assemblers installed on the workstations:
 
 #### Installing R packages
 
-In [ideas.md](pages/ideas.html) you are given some R scripts to try. These require several packages that may not be installed on your system. To install them, in R run:
+In [ideas.md](./ideas.md) you are given some R scripts to try. These require several packages that may not be installed on your system. To install them, in R run:
 
 ```R
 install.packages("tidyverse")
