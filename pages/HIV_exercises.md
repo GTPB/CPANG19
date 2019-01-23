@@ -25,11 +25,15 @@ More concretely, we ask you to work on the following tasks in groups of four (in
 
 - Analyze the genetic diversity in the five virus mix. Assume you don't know that five viruses went into that sample. Think of ways to visualize the structure of the data sets (Illumina and PacBio). Could you have inferred the number of present viruses from your visualization? Discuss why this is (or is not) possible.
 
+<br/>
+
 ### Presentations
 We ask each group to
 
 - Prepare a short (~5-10min) presentation on what they found.
 - Create a log (i.e. in markdown) of the steps you took to get there to allow others to retrace your solutions.
+
+<br/>
 
 ### Tools that can be helpful today
 There is a number of VG subcommands that can aid your tasks today, in particular:
@@ -39,6 +43,8 @@ There is a number of VG subcommands that can aid your tasks today, in particular
 - vg vectorize
 - vg mod
 - vg augment
+
+<br/>
 
 ### Hints
 
@@ -108,6 +114,8 @@ install_github("vqv/ggbiplot")
 
 If you try to use `vg pack` on long read alignments you may get strange SDSL errors complaining about ranks not being in some range. If so, there is a [sed hack you can use to fix the problem](https://github.com/vgteam/vg/issues/1503). A real fix will be in shortly.
 
+<br/>
+
 ### Back
 
-Back to [main page](https://gtpb.github.io/CPANG18/).
+Back to [main page](../index.md).
