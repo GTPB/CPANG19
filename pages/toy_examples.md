@@ -165,6 +165,8 @@ Try doing this on graphs with a range of minimum allele frequencies (e.g. 0.5, 0
 
 How do these files seem to scale with the minimum cutoff?
 
+<br/>
+
 ### Mapping data from real data to examine the improvement
 
 We can also download some real data mapping to this region to see if the different graphs provide varying levels of performance.
