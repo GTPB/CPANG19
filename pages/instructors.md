@@ -30,6 +30,7 @@ He has seven years of experience in genomics, where he has worked on the develop
 ## Course Assistant
 
 ### Jordan Eizenga
+
 <img src="https://cgl.genomics.ucsc.edu/wp-content/uploads/2016/07/CGL_Team_Pics_Jordan_Einzeinga.png" height="220" width="170" align="left" style="margin-right: 3%; margin-bottom: 0.3em;">
 
 [Jordan Eizenga](https://github.com/jeizenga) is a PhD student in the Computational Genomics Lab at the Unversity of California Santa Cruz. His advisors are David Haussler and Benedict Paten. Jordan was originally trained as a mathematician, but made the switch to bioinformatics in 2015. 
@@ -39,4 +40,5 @@ Now his research focuses on using graph data structures in genomics. He has publ
 <br/>
 
 ### Back
+
 Back to [main page](../index.md).
