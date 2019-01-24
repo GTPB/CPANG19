@@ -118,4 +118,4 @@ If you try to use `vg pack` on long read alignments you may get strange SDSL err
 
 ### Back
 
-Back to [first page](../index.md).
+Back to [main page](../index.md).
