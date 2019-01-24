@@ -33,13 +33,15 @@ Raised in Kentucky, Erik obtained an undergraduate degree in the social sciences
 ## Course Assistant
 
 ### Jordan Eizenga
+**Affiliation:** University of California Santa Cruz
 
 <img src="https://cgl.genomics.ucsc.edu/wp-content/uploads/2016/07/CGL_Team_Pics_Jordan_Einzeinga.png" height="220" width="170" align="left" style="margin-right: 3%; margin-bottom: 0.3em;">
 
-[Jordan Eizenga](https://github.com/jeizenga) is a PhD student in the Computational Genomics Lab at the Unversity of California Santa Cruz. His advisors are David Haussler and Benedict Paten. Jordan was originally trained as a mathematician, but made the switch to bioinformatics in 2015. 
+[Jordan Eizenga](https://github.com/jeizenga) is a PhD student in the Computational Genomics Lab at the University of California Santa Cruz. His advisors are David Haussler and Benedict Paten. Jordan was originally trained as a mathematician, but made the switch to bioinformatics in 2015. 
 
 Now his research focuses on using graph data structures in genomics. He has published on both theoretical and practical aspects of this problem, and he has been heavily involved in the development of the [vg](https://github.com/vgteam/vg) project.
 
+<br/>
 <br/>
 <br/>
 
