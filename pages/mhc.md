@@ -9,6 +9,8 @@ The MHC (major histocompatiblity complex) is a region on chromosome 6 in the hum
 
 Because the MHC region is so polymorphic, it is one of the regions of the human genome that is not well-served by linear references. Recognizing this limitation, starting with with GRCh38 the Genome Reference Consortium (GRC) began distributing a set of alternate scaffolds for the MHC (and some other regions) along with the reference sequence. However, many genomics tools do not yet support these alternate scaffolds well. 
 
+<br/>
+
 ## Constructing an MHC graph
 
 Graph genome tools offer one possibility for how we could use the alternate scaffolds. The first step is to build a graph. You have a few options for how you might accomplish this. The most obvious way is probably an alignment method. You have already seen `vg msga`, which is one option. However, you may also want to use a different MSA tool. `vg` has a method to construct a graph directly from a multiple sequence alignment in either MAF or Clustal format. The following example shows how you could do this using Clustal Omega.
@@ -24,11 +26,15 @@ You are free to try this method, but be warned that the MHC region is large and 
 
 It should be noted that there are other methods that you could use to build a graph of the MHC region. For instance, you could find a VCF and use `vg construct -v`. You could also use an assembly tool to build an assembly graph and construct a VG from the GFA file.
 
+<br/>
+
 ## Choosing MHC scaffolds
 
 An interesting question to ask for a new sample is which MHC scaffold (or pair of scaffolds) will represent its MHC region best. In reality, any individual's MHC haplotypes are unlikely to match any of the MHC scaffolds well. However, they will have recombinant subsequences in common with the scaffolds. Moreover, previous studies have demonstrated benefits in downstream application for choosing more representative sequences for the reference, even if these sequences are imperfect (see Dilthey, et al. 2014). 
 
 We have provided for you a set of sequencing reads from the Human Genome Structural Variation Consortium. They come from three parent-child trios: the Yoruban trio NA19238-NA19239-NA19240, the Han Chinese trio HG00512-HG00513-HG00514, and the Puerto Rican trio HG00732-HG00733-HG00734. In each trio, the highest-numbered sample is the child. You will have both Illumina paired end short reads and PacBio long reads. Rather than providing the entire genomic dataset, we have extracted reads that mapped to the MHC region or one of the alternate scaffolds using a conventional read mapper. Of course, that means that these datasets are already biased by mapping to a linear reference. However, the volume of data for a full genomic dataset is probably too computationally demanding for an exercise in this environment. High coverage datasets may also be challenging, so we have also provided downsampled lower coverage files. 
+
+<br/>
 
 ## Variant calling in VG
 
@@ -43,6 +49,8 @@ If this is too slow for you, it is also possible to speed up the execution by bu
 
 How could you use these variant calls to determine which MHC scaffold(s) are most appropriate for this sample? Since you have trio datasets may be interesting to look at Mendelian consistency in your approach.
 
+<br/>
+
 ## Back
 
-Back to [main page](https://gtpb.github.io/CPANG18/).
+Back to [main page](../index.md).

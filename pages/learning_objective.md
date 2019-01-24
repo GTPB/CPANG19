@@ -24,6 +24,7 @@ This figure, from a recent [paper on computational pangenomics](https://doi.org/
 
 Our goal is that students achieve fluency in the practical aspects of relevant workflows within this scope.
 
+
 ### Appreciate the limitations of linear reference genomes
 
 Objectives:
@@ -38,6 +39,7 @@ Exercises:
 - Align reads from a structural variant containing locus to a linear reference, visualize with IGV, and report what is found.
 - Attempt to call variants in the region of a structural variant treated this way and discuss the results.
 
+
 ### Construct
 
 Objectives:
@@ -46,12 +48,14 @@ Objectives:
 - Understand the relationship between traditional lists of variants, linear references, and basic pangenomic models.
 - Have a basic understanding of the graphical models used by assemblers and how they relate to the data model.
 
+
 #### Linear reference + variants
 
 Exercises:
 
 - Generate a short paragraph summarizing the vg schema (using the schema itself, help from the instructors, and online documentation).
 - Build a vg graph for a fragment of the human 1000 Genomes Project data using `vg construct`.
+
 
 #### Assembly graphs
 
@@ -99,4 +103,4 @@ TODO
 
 ## Back
 
-Back to [main page](https://gtpb.github.io/CPANG18/)
+Back to [main page](../index.md)

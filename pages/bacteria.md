@@ -7,6 +7,8 @@ Traditionally, pan-genomes for bacteria are gene based. That is, you study the s
 
 In this practical, we explore ways of implementing such a gene-level pan-genome in the vg software ecosystem. This allows us to detect the presence/absence of genes as well as to model sequence variation within genes. This is important since key traits, such as drug resistance, can be conferred by both transfer of whole genes but also by specific mutations ([Blair et al., 2015](http://dx.doi.org/10.1038/nrmicro3380)).
 
+<br/>
+
 ## Data
 Today, we will mostly work on E. coli data. On your workstations you find the following data sets:
 
@@ -16,11 +18,15 @@ Today, we will mostly work on E. coli data. On your workstations you find the fo
 - `data/bacteria/contigs` the result of running the Minia3 assembler on the reads provided in the above directory.
 - In case you need read data (and the corresponding assemblies) we can provide more (241 in total).
 
+<br/>
+
 ## Objectives
 - Build a graph-based representation of a single gene (of your choice),
 - Come up with ways of determining whether a gene is absent/present in a given sample,
 - Build a whole bacterial pan-genome.
 - Use this representation to find a set of essential genes (present in all strains) as opposed to accessory genes (missing in some strains).
+
+<br/>
 
 ## Ideas
 - Do a pooled assembly of the 10 strains
@@ -34,6 +40,8 @@ Today, we will mostly work on E. coli data. On your workstations you find the fo
 - Select one gene (gyrA) and align all sequences of this gene (from NCBI) from all strains progressively
 - Use this gene model for genotyping
 - Count gene identify in NCBI gene set and take the most frequent one, map reads to it (make sure to filter out false positive mappings)
+
+<br/>
 
 ## Hints
 
@@ -99,6 +107,8 @@ You can check how many reads per second you are aligning using:
 vg map -d x -f reads.fq.gz -j | pv -l >/dev/null
 ```
 
+<br/>
+
 ### Back
 
-Back to [main page](https://gtpb.github.io/CPANG18/).
+Back to [main page](../index.md).

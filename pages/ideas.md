@@ -1,4 +1,7 @@
-## Missing genome reconstruction
+---
+layout: page
+title: Missing genome reconstruction
+---
 
 Let's make a reference graph, align reads to it, and use surjection and k-means clustering to attempt to find the reads that map to the 5th genome. Finally, we'll assemble these and see if it matches known information about the fifth genome.
 
@@ -21,6 +24,8 @@ And we prune and index with GCSA2:
 ```
 vg index -g REF4.gcsa -k 16 -p <(vg mod -pl 16 -e 3 REF4.vg)
 ```
+
+<br/>
 
 ### Surjection based exploration
 
@@ -71,6 +76,8 @@ ggplot(first10k.pca.df, aes(x=PC1, y=PC2, color=cluster)) + geom_point()
 ggbiplot(first10k.pca, alpha=0.2, groups=first10k$cluster)
 ```
 
+<br/>
+
 ### Vectorize based analysis
 
 The pacbio sequencing data from the experiment includes reads that are approximately 1300bp on average.
@@ -116,7 +123,9 @@ ggbiplot(pacbio.dist.pca) + geom_point(aes(color=pacbio.dist[5:nrow(pacbio.dist)
 ggbiplot(pacbio.dist.pca) + geom_point(aes(color=pacbio.dist[5:nrow(pacbio.dist),]$node.count+1)) + scale_color_continuous("node count") + theme_bw()
 ```
 
+<br/>
+
 ## Back
 
-Back to [main page](https://gtpb.github.io/CPANG18/)
+Back to [main page](../index.md)
 
