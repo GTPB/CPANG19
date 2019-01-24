@@ -38,6 +38,7 @@ He has seven years of experience in genomics, where he has worked on the develop
 Now his research focuses on using graph data structures in genomics. He has published on both theoretical and practical aspects of this problem, and he has been heavily involved in the development of the [vg](https://github.com/vgteam/vg) project.
 
 <br/>
+<br/>
 
 ### Back
 
