@@ -53,8 +53,4 @@ All the datasets used for this training course is available throughout the docum
 
 ---
 
-### [Download full course](assets/CPANG18.zip){: .btn}
-
----
-
 The source for this course webpage is [on github](https://github.com/GTPB/CPANG18).
