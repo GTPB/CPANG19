@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Learning objectives
-description: Description of CPANG18 learning objectives
+description: Description of CPANG19 learning objectives
 ---
 
 Participants first will learn about limitations of linear reference-based methods and work through a brief refresher or introduction to standard approaches for processing sequencing data, including read alignment and variant calling.

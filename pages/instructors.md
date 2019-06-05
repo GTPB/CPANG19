@@ -1,9 +1,9 @@
 ---
 layout: page
 title: Instructors
-description: CPANG18 Course instructors description
+description: CPANG19 Course instructors description
 ---
-
+<!--
 ## Tobias Marschall
 **Affiliation:** Center for Bioinformatics at Saarland University and Max Planck Institute for Informatics
 
@@ -17,6 +17,8 @@ Tobias received his undergraduate education at Bielefeld University (Germany), w
 
 ---
 
+-->
+
 ### Erik Garrison
 **Affiliation:** Wellcome Trust Sanger Institute and Cambridge University
 
@@ -29,6 +31,8 @@ He has seven years of experience in genomics, where he has worked on the develop
 Raised in Kentucky, Erik obtained an undergraduate degree in the social sciences from Harvard University. After graduation he worked at Harvard Medical School, One Laptop Per Child, and Boston College before beginning his studies at the Sanger Institute.
 
 <br/>
+
+<!--
 
 ## Course Assistant
 
@@ -46,6 +50,8 @@ Now his research focuses on using graph data structures in genomics. He has publ
 <br/>
 <br/>
 <br/>
+
+-->
 
 ### Back
 

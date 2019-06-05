@@ -61,7 +61,7 @@ We take a number of steps to ensure that the PCA makes sense. First, we remove c
 Then, we normalize each row so that the identity sum is 1.
 Finally, we run the PCA and k-means clustering with a center count of 5 (as we are assuming there are 5 samples mixed together).
 
-```R
+```r
 require(tidyverse)
 require(broom)
 require(ggbiplot)
@@ -108,7 +108,7 @@ In R we can explore the relationship by building a distance metric between each 
 This is similar to surjection but avoids the need to actually run the local realignment.
 Then we can explore the relationship between the sequences using PCA.
 
-```R
+```r
 pacbio <- read.delim('SRR961669.vectorized.1k.tsv.gz')
 pacbio.m <- pacbio[2:ncol(pacbio)]
 pacbio.dist <- data.frame(

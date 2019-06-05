@@ -1,8 +1,8 @@
 ---
 layout: page
-title: CPANG18
+title: CPANG19
 tagline: Computational PANGenomics
-description: Computational Pangenomics Course taught at GTPB in March 2018
+description: Computational Pangenomics Course taught at GTPB in  2019
 ---
 
 ![CPANG18](/assets/Header.png)
@@ -22,25 +22,25 @@ All the datasets used for this training course is available throughout the docum
 
 ### Day 1
 #### [Intro slides](assets/day1-intro.pdf) [PDF Download]
-#### [Slides](assets/CPANG18_Computational_Pangenomics_2018_(day1).pdf) [PDF Download]
+#### [Slides](assets/CPANG19_Computational_Pangenomics_2019_(day1).pdf) [PDF Download]
 #### Practical 1: [toy examples](pages/toy_examples.md)
 
 <br/>
 
 ### Day 2
-#### [Slides](assets/Computational_Pangenomics_CPANG18-(day2).pdf) [PDF Download]
+#### [Slides](assets/Computational_Pangenomics_CPANG19-(day2).pdf) [PDF Download]
 #### Practical 2: [HIV](pages/HIV_exercises.md)
 
 <br/>
 
 ### Day 3
-#### [Slides](assets/Computational_Pangenomics_CPANG18-(day3).pdf) [PDF Download]
+#### [Slides](assets/Computational_Pangenomics_CPANG19-(day3).pdf) [PDF Download]
 #### Practical 3: [Bacteria](pages/bacteria.md)
 
 <br/>
 
 ### Day 4
-#### [Slides](assets/Computational_Pangenomics_CPANG18-(day4).pdf) [PDF Download]
+#### [Slides](assets/Computational_Pangenomics_CPANG19-(day4).pdf) [PDF Download]
 #### [Practical overview](assets/Alignment_methods_for_graph_construction.pdf) [PDF Download]
 #### [Theory slides](assets/Graph_genome_theory_slides.pdf) [PDF Download]
 #### Practical 4: [MHC](pages/mhc.md)
@@ -53,4 +53,4 @@ All the datasets used for this training course is available throughout the docum
 
 ---
 
-The source for this course webpage is [on github](https://github.com/GTPB/CPANG18).
+The source for this course webpage is [on github](https://github.com/GTPB/CPANG19).
