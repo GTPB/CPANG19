@@ -1,11 +1,7 @@
 ## CPANG19 - Computational PANGenomics
 
-<!--
-
-###  Instituto Gulbenkian de Ciência (IGC) - Oeiras, Portugal - March 6<sup>th</sup> - March 9<sup>th</sup> 2018
-Go to the [course oficial website](http://gtpb.igc.gulbenkian.pt/bicourses/2018/CPANG19/)
-
--->
+###  Instituto Gulbenkian de Ciência (IGC) - Oeiras, Portugal - September 9<sup>th</sup> - September 13<sup>th</sup> 2019
+Go to the [course oficial website](http://gtpb.igc.gulbenkian.pt/bicourses/2019/CPANG19/)
 
 ---
 
