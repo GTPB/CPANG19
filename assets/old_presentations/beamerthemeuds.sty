@@ -1,0 +1,72 @@
+\useinnertheme[shadow=false]{rounded}
+\usecolortheme{uds}
+\pgfdeclareimage[height=2em,interpolate=true]{mpii-logo}{logos/mpii}
+\pgfdeclareimage[height=2em,interpolate=true]{uds-logo}{logos/uds}
+\pgfdeclareimage[height=2em,interpolate=true]{zbi-logo}{logos/zbi}
+
+\defbeamertemplate*{title page}{uds theme}[1][]
+{
+  \vskip-4pt%
+  \pgfuseimage{uds-logo}\hfill\pgfuseimage{zbi-logo}\hfill\pgfuseimage{mpii-logo}
+  \vskip10pt
+  \vfill
+  \begin{minipage}[t][0.65\textheight]{\textwidth}
+  %\vbox{}
+  %\vfill
+  \begin{centering}
+    \begin{beamercolorbox}[sep=8pt,center,#1]{title}
+      \usebeamercolor[fg]{footline pagenumber}\usebeamerfont{title}\inserttitle\par%
+      \ifx\insertsubtitle\@empty%
+      \else%
+        \vskip0.25em%
+        {\usebeamerfont{subtitle}\usebeamercolor[fg]{subtitle}\insertsubtitle\par}%
+      \fi%     
+    \end{beamercolorbox}%
+    \vskip1em\par
+    \begin{beamercolorbox}[sep=8pt,center,#1]{author}
+      \usebeamerfont{author}\insertauthor
+    \end{beamercolorbox}
+    \begin{beamercolorbox}[sep=8pt,center,#1]{institute}
+      \usebeamerfont{institute}\insertinstitute
+    \end{beamercolorbox}
+    \begin{beamercolorbox}[sep=8pt,center,#1]{date}
+      \usebeamerfont{date}\insertdate
+    \end{beamercolorbox}\vskip0.5em
+    {\usebeamercolor[fg]{titlegraphic}\inserttitlegraphic\par}
+  \end{centering}
+  \vfill
+  \end{minipage}
+  \vfill
+  \vskip10pt
+}
+
+
+\defbeamertemplate*{frametitle}{uds theme}
+{%
+\vskip10pt%
+\insertframetitle
+% \hrule
+}
+
+\setbeamertemplate{navigation symbols}{}
+
+\defbeamertemplate*{footline}{uds theme}{
+\hspace{5pt}\pgfuseimage{uds-logo}\hfill\pgfuseimage{zbi-logo}\hfill\pgfuseimage{mpii-logo}\hspace{5pt}
+\vskip10pt
+}
+% {
+% \leavevmode%
+% % \vspace{-1pt}
+% \hbox{%
+% \begin{beamercolorbox}[wd=\paperwidth,ht=2.25ex,dp=1ex,center]{footline title}%
+% \begin{minipage}{\paperwidth}
+% \hspace{24pt}\insertshorttitle\hfill\usebeamercolor[fg]{footline pagenumber}\insertframenumber{}\hspace{24pt}
+% \end{minipage}
+% \end{beamercolorbox}%
+% }
+% \vskip8pt%
+% }
+
+\setbeamertemplate{items}[square]
+\setbeamertemplate{sections/subsections in toc}[square]
+\renewcommand{\emph}[1]{{\usebeamercolor[fg]{emph}\textbf{#1}}}
