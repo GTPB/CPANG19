@@ -44,6 +44,12 @@ All the datasets used for this training course is available throughout the docum
 #### [Practical overview](assets/Alignment_methods_for_graph_construction.pdf) [PDF Download]
 #### [Theory slides](assets/Graph_genome_theory_slides.pdf) [PDF Download]
 #### Practical 4: [MHC](pages/mhc.md)
+<br/>
+
+### Day 5
+#### [Slides](assets/Computational_Pangenomics_CPANG19-(day5).pdf) [PDF Download]
+#### Practical 5: [Long reads](pages/long_reads.md)
+
 
 ---
 
