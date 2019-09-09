@@ -209,6 +209,16 @@ Let's dig into some of the more-highly differentiated reads to understand why vg
 
 <br/>
 
+### Bonus: seqwish and odgi to build and process graphs induced from alignments
+
+Use minimap2 and seqwish to build graphs from the HLA gene haplotypes in vg/test/GRCh38_alts/FASTA/HLA.
+
+Follow the steps in https://github.com/ekg/yeast-pangenome/blob/master/steps.sh to build and visualize a pangenome from yeast.
+
+Can we index this graph and map reads against it? (e.g. from YPRP https://yjx1217.github.io/Yeast_PacBio_2016/welcome/ )?
+
+Use Bandage and odgi to visualize graphs (convert to GFA first).
+
 ### Back
 
 Back to [main page](../index.md).
