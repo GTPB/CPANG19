@@ -140,7 +140,7 @@ We see the `Mappings` of the `Alignment` written in blue for exact matches and y
 To use [IVG](https://vgteam.github.io/sequenceTubeMap/), we need the .xg index and an indexed GAM file.
 Also, upload will only work for small files, so we have to subset our graph to do it.
 
-    vg find -r 2000:3000 -x z.xg >z.sub.vg
+    vg find -r 2000:3000 -x z.xg | vg mod -cC - >z.sub.vg
     vg index -x z.sub.xg -g z.sub.gcsa -k 16 z.sub.vg
     vg sim -x z.sub.xg -l 100 -n 1000 -e 0.01 -i 0.005 -a >z.sub.sim
     vg map -x z.sub.xg -g z.sub.gcsa -G z.sub.sim >z.sub.gam
