@@ -137,15 +137,6 @@ These commands would show us the first alignment in the set:
 
 We see the `Mappings` of the `Alignment` written in blue for exact matches and yellow for mismatches above the nodes that they refer to. Many alignments can be visualized at the same time. A simpler mode of visualization `vg view -dSA` gives us the alignment's mappings to nodes, colored in the range from green to red depending on the quality of the match to the particular node.
 
-To use [IVG](https://vgteam.github.io/sequenceTubeMap/), we need the .xg index and an indexed GAM file.
-Also, upload will only work for small files, so we have to subset our graph to do it.
-
-    vg find -r 2000:3000 -x z.xg -c 2 >z.sub.vg
-    vg index -x z.sub.xg -g z.sub.gcsa -k 16 z.sub.vg
-    vg sim -x z.sub.xg -l 100 -n 1000 -e 0.01 -i 0.005 -a >z.sub.sim
-    vg map -x z.sub.xg -g z.sub.gcsa -G z.sub.sim >z.sub.gam
-    vg gamsort -i z.sub.sort.gam.idx z.sub.gam >z.sub.sort.gam
-
 For evaluation purposes, vg has the capability to compare the newly created read alignments to true paths of each reads used during simulation.
 
 	vg map -x z.xg -g z.gcsa -G z.sim --compare -j
