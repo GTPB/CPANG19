@@ -71,17 +71,27 @@ Visualize the outcome.
 
 Ok, that's nice, but you might wonder which sequence of nodes actually corresponds to the sequence (`tiny.fa`) you started from? To keep track of that, vg adds a **path** to the graph. Let's add this path to the visualization.
 
-	vg view -dp tiny.ref.vg | dot -Tpdf -o tiny.pdf
+	vg view -dp tiny.vg | dot -Tpdf -o tiny.pdf
 
 You find the output too crowded? Option `-S` removes the sequence labels and only plots node IDs.
 
-	vg view -dpS tiny.ref.vg | dot -Tpdf -o tiny.pdf
+	vg view -dpS tiny.vg | dot -Tpdf -o tiny.pdf
 
 Another tool that comes with the graphviz package is *Neato*. It creates force-directed layouts of a graph.
 
-	vg view -dpS tiny.ref.vg | neato -Tpdf -o tiny.pdf
+	vg view -dpS tiny.vg | neato -Tpdf -o tiny.pdf
 
 For these small graphs, the difference it not that big, but for more involved cases, these layouts can be much easier to read.
+
+It's also possible to read the graph in different formats.
+For instance, we can write the graph in GFA, modify it using text processing tools, and read it back in:
+
+    vg view tiny.vg >tiny.gfa
+
+The GFA file has three elements. `S` records represent nodes, `L` records represent edges, and `P` records represent paths.
+We can use grep to remove the path lines:
+
+    cat tiny.gfa | grep -v ^P | vg view -dp - | dot -Tpdf -o tiny.no_path.pdf
 
 <br/>
 
