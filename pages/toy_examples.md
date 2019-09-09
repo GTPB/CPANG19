@@ -181,7 +181,6 @@ How do these files seem to scale with the minimum cutoff?
 
 We can also download some real data mapping to this region to see if the different graphs provide varying levels of performance.
 
-    # note: if you are taking this course at the Gulbenkian Institute of Science, these files have been added to your computers in the ~/data/toy directory
     samtools view -b ftp://ftp-trace.ncbi.nlm.nih.gov/giab/ftp/data/NA12878/NIST_NA12878_HG001_HiSeq_300x/RMNISTHS_30xdownsample.bam 20:1000000-2000000 >NA12878.20_1M-2M.30x.bam
     wget http://hypervolu.me/~erik/tmp/HG002-NA24385-20_1M-2M-50x.bam
 
