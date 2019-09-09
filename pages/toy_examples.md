@@ -138,11 +138,12 @@ These commands would show us the first alignment in the set:
 We see the `Mappings` of the `Alignment` written in blue for exact matches and yellow for mismatches above the nodes that they refer to. Many alignments can be visualized at the same time. A simpler mode of visualization `vg view -dSA` gives us the alignment's mappings to nodes, colored in the range from green to red depending on the quality of the match to the particular node.
 
 To use [IVG](https://vgteam.github.io/sequenceTubeMap/), we need the .xg index and an indexed GAM file.
-We already have the .xg index, and so we make the gam index using `vg gamsort`:
+Also, upload will only work for small files, so we have to subset our graph to do it.
 
+    vg find -r 2000:3000 -x z.xg >z.sub.vg
+    vg sim -x z.sub.xg -l 100 -n 1000 -e 0.01 -i 0.005 -a >z.sub.sim
+    vg map -x z.xg -g z.gcsa -G z.sub.sim >z.sub.gam
     vg gamsort -i z.sort.gam.idx z.gam >z.sort.gam
-
-It's now possible to select "custom data" from the IVG model and upload your .xg and .gam.idx files to view them.
 
 For evaluation purposes, vg has the capability to compare the newly created read alignments to true paths of each reads used during simulation.
 
@@ -196,7 +197,7 @@ The first is a sample that was used in the preparation of the 1000 Genomes resul
 
 We can run a single-ended alignment test to compare with bwa mem:
 
-    samtools fastq -1 HG002-NA24385-20_1M-2M-50x_1.fq.gz -2 HG002-NA24385-20_1M-2M-50x_2.fq.gz data/HG002-NA24385-20_1M-2M-50x.bam
+    samtools fastq -1 HG002-NA24385-20_1M-2M-50x_1.fq.gz -2 HG002-NA24385-20_1M-2M-50x_2.fq.gz /media/gtpb_shared_drive/To_Participant/HG002-NA24385-20_1M-2M-50x.bam
     bwa mem z.fa HG002-NA24385-20_1M-2M-50x_1.fq.gz | sambamba view -S -f json /dev/stdin | jq -cr '[.qname, .tags.AS] | @tsv' >bwa_mem.scores.tsv
     vg map --drop-full-l-bonus -d z.AF0.01 -f HG002-NA24385-20_1M-2M-50x_1.fq.gz -j | pv -l | jq -cr '[.name, .score] | @tsv' >vg_map.AF0.01.scores.tsv
 
