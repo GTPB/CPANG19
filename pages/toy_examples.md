@@ -223,7 +223,13 @@ Let's dig into some of the more-highly differentiated reads to understand why vg
 
 Use minimap2 and seqwish to build graphs from the HLA gene haplotypes in vg/test/GRCh38_alts/FASTA/HLA.
 
+    minimap2 -c -x asm20 -X -t 4 DRB1-3123.fa DRB1-3123.fa | gzip >DRB1-3123.paf.gz
+    seqwish -s DRB1-3123.fa -p DRB1-3123.paf.gz -b DRB1-3123.work -g DRB1-3123.gfa
+    odgi build -g DRB1-3123.gfa -o - | odgi sort -i - -o DRB1-3123.og
+    odgi viz -i DRB1-3123.og -o DRB1-3123.png -x 2000 -R
+
 Follow the steps in https://github.com/ekg/yeast-pangenome/blob/master/steps.sh to build and visualize a pangenome from yeast.
+(Note that we filter the length of our alignments using fpa. This can also be applied to the GRCh32 HLA alts.)
 
 Can we index this graph and map reads against it? (e.g. from YPRP https://yjx1217.github.io/Yeast_PacBio_2016/welcome/ )?
 
