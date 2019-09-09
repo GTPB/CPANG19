@@ -144,7 +144,7 @@ Also, upload will only work for small files, so we have to subset our graph to d
     vg index -x z.sub.xg -g z.sub.gcsa -k 16 z.sub.vg
     vg sim -x z.sub.xg -l 100 -n 1000 -e 0.01 -i 0.005 -a >z.sub.sim
     vg map -x z.sub.xg -g z.sub.gcsa -G z.sub.sim >z.sub.gam
-    vg gamsort -i z.sort.gam.idx z.gam >z.sort.gam
+    vg gamsort -i z.sub.sort.gam.idx z.sub.gam >z.sub.sort.gam
 
 For evaluation purposes, vg has the capability to compare the newly created read alignments to true paths of each reads used during simulation.
 
