@@ -22,7 +22,7 @@ All the datasets used for this training course is available throughout the docum
 
 ### Day 1
 #### [Intro slides](assets/day1-intro.pdf) [PDF Download]
-#### [Slides](assets/CPANG19_Computational_Pangenomics_2019_(day1).pdf) [PDF Download]
+#### [Slides](https://docs.google.com/presentation/d/1Iy0RaKseVhgmoKT9Hrzdh3sb2IWOF6GfmVm-y4di0dw/edit?usp=sharing) [google drive]
 #### Practical 1: [toy examples](pages/toy_examples.md)
 
 <br/>
