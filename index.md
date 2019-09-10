@@ -28,7 +28,7 @@ All the datasets used for this training course is available throughout the docum
 <br/>
 
 ### Day 2
-#### [Slides](assets/Computational_Pangenomics_CPANG19-(day2).pdf) [PDF Download]
+#### [Slides](https://docs.google.com/presentation/d/1vClnCkGPZwqpVBZRbc4WQErlKNWCOWGaxRLmyuOZas0/edit?usp=sharing)
 #### Practical 2: [HIV](pages/HIV_exercises.md)
 
 <br/>
