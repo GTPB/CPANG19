@@ -39,11 +39,14 @@ We ask each group to
 There is a number of VG subcommands that can aid your tasks today, in particular:
 
 - vg msga
-- seqwish
+- seqwish (+minimap2)
 - vg surject
 - vg vectorize
 - vg mod
 - vg augment
+- GraphAligner
+- odgi stats
+- odgi viz
 - odgi sort
 - odgi prune
 - odgi simplify
