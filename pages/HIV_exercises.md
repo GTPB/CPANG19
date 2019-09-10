@@ -17,9 +17,9 @@ The data were are using for this is based an artifical lab mix of five viruses:
 
 The five reference sequences underlying the mix can be find in the above git repository, see at https://github.com/cbg-ethz/5-virus-mix/blob/master/data/REF.fasta.
 
-At home, you can rely on sra-tools (more specifically `fastq-dump`) to download data from SRA. At GTPB, Illumina and PacBio data is already available at your workstations.
+At home, you can rely on sra-tools (more specifically `fastq-dump`) to download data from SRA. At GTPB, Illumina, 454 and PacBio data is already available at your workstations in the folder `~/cpang19/day2/`.
 
-More concretely, we ask you to work on the following tasks in groups of four (in any order, based on your groups preferences):
+More concretely, we ask you to work on the following tasks in groups of three or four (in any order, based on your groups preferences):
 
 - Study the effect of using a pan-genone reference on the read alignments. First, spot some examples of regions of high sequence diversity within the reads.  Construct a pan-genome representation of the five reference genomes, use it to align reads to it, surject them to a linear reference and compare the results to BWA. Second, think of ways to quantify the quality of the alignments across all reads and study the effect of different strategies for pan-genome construction on that measure.
 
@@ -53,6 +53,10 @@ There is a number of VG subcommands that can aid your tasks today, in particular
 - odgi subset
 - odgi bin
 - odgi paths
+- GraphAligner
+
+### Error correction
+The error correction pipeline has been installed into your computers in the path `~/cpang19/day2/error_correction`. To run it, change the parameters and file paths in config.yaml, and then run the command `snakemake --cores 8 all`.
 
 <br/>
 
@@ -86,7 +90,7 @@ K03455.1	Genbank	CDS	6225	8795	.	+	0	ID=cds4;Parent=rna0;Dbxref=NCBI_GP:AAB50262
 
 #### Circular HIV genome confusion
 
-An earlier version of the [ideas.md](pages/ideas.html) walkthrough suggested that you should circularize the HIV genome. This is not the case, and the apparent circularity of the REF.fasta results from either homology between the start and end of some of the strains or from the generation of the references based on plasmid resequencing.
+An earlier version of the [ideas.md](./ideas.md) walkthrough suggested that you should circularize the HIV genome. This is not the case, and the apparent circularity of the REF.fasta results from either homology between the start and end of some of the strains or from the generation of the references based on plasmid resequencing.
 
 #### GFA output and Bandage
 
