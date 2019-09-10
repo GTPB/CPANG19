@@ -128,9 +128,15 @@ require(devtools)
 install_github("vqv/ggbiplot")
 ```
 
-#### Hacky workaround for [vg issue #1503](https://github.com/vgteam/vg/issues/1503)
+#### `vg pack`
 
-If you try to use `vg pack` on long read alignments you may get strange SDSL errors complaining about ranks not being in some range. If so, there is a [sed hack you can use to fix the problem](https://github.com/vgteam/vg/issues/1503). A real fix will be in shortly.
+If you want to get a coverage map of the graph's nodes and edges, you can apply `vg pack`.
+
+```
+vg pack -x z.xg -o z.pack -g z.gam
+vg pack -i z.pack -d >base.tsv   # a table representing per-bp coverage
+vg pack -i z.pack -D >edge.tsv   # a table with edge coverage
+```
 
 <br/>
 
