@@ -39,11 +39,14 @@ We ask each group to
 There is a number of VG subcommands that can aid your tasks today, in particular:
 
 - vg msga
-- seqwish
+- seqwish (+minimap2)
 - vg surject
 - vg vectorize
 - vg mod
 - vg augment
+- GraphAligner
+- odgi stats
+- odgi viz
 - odgi sort
 - odgi prune
 - odgi simplify
@@ -99,8 +102,6 @@ You may have noticed that you cannot directly index the HIV graph generated from
 
 To resolve this problem, we "prune" the graph with `vg mod -pl 16 -e 3` or `vg prune`. Try pruning the graph and rendering it with `vg view -d` to see what happens to the structures within it under certain pruning modes. We pass the pruned graph to `vg index -g`, indexing the kmers in it. Then when we map we give `vg map` the full graph (in xg format) and the GCSA based on the pruned graph. The MEM finding uses the pruned graph, but when we do the local alignment we can efficiently work with the full, un-pruned graph, returning alignments in its space.
 
-#### ClustalO input
-
 #### Assembly options
 Currently, there are two assemblers installed on the workstations: 
 
@@ -108,6 +109,12 @@ Currently, there are two assemblers installed on the workstations:
 
 - [minia3](https://github.com/GATB/minia) is based on BCALM, but performs additional graph modification steps to get out longer contigs.
 
+To read these files in, we need to also convert the id space to the correct form, using awk:
+
+```
+awk -vOFS='\t' '$1=="L" { $2 +=1; $4+=1 } $1=="S" { $2+=1 } { print }' assembly.gfa > fixed.gfa
+vg view -Fv fixed.gfa > g.vg
+```
 
 #### Installing R packages
 
@@ -121,9 +128,19 @@ require(devtools)
 install_github("vqv/ggbiplot")
 ```
 
-#### Hacky workaround for [vg issue #1503](https://github.com/vgteam/vg/issues/1503)
+#### `vg pack`
 
-If you try to use `vg pack` on long read alignments you may get strange SDSL errors complaining about ranks not being in some range. If so, there is a [sed hack you can use to fix the problem](https://github.com/vgteam/vg/issues/1503). A real fix will be in shortly.
+If you want to get a coverage map of the graph's nodes and edges, you can apply `vg pack`.
+
+```
+vg pack -x z.xg -o z.pack -g z.gam
+vg pack -i z.pack -d >base.tsv   # a table representing per-bp coverage
+vg pack -i z.pack -D >edge.tsv   # a table with edge coverage
+```
+
+#### aligning long reads with vg
+
+`vg map` has a long read alignment mode. To use it, set `vg map -m long ...`.
 
 <br/>
 
