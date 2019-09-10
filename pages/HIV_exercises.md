@@ -102,8 +102,6 @@ You may have noticed that you cannot directly index the HIV graph generated from
 
 To resolve this problem, we "prune" the graph with `vg mod -pl 16 -e 3` or `vg prune`. Try pruning the graph and rendering it with `vg view -d` to see what happens to the structures within it under certain pruning modes. We pass the pruned graph to `vg index -g`, indexing the kmers in it. Then when we map we give `vg map` the full graph (in xg format) and the GCSA based on the pruned graph. The MEM finding uses the pruned graph, but when we do the local alignment we can efficiently work with the full, un-pruned graph, returning alignments in its space.
 
-#### ClustalO input
-
 #### Assembly options
 Currently, there are two assemblers installed on the workstations: 
 
@@ -111,6 +109,12 @@ Currently, there are two assemblers installed on the workstations:
 
 - [minia3](https://github.com/GATB/minia) is based on BCALM, but performs additional graph modification steps to get out longer contigs.
 
+To read these files in, we need to also convert the id space to the correct form, using awk:
+
+```
+awk -vOFS='\t' '$1=="L" { $2 +=1; $4+=1 } $1=="S" { $2+=1 } { print }' assembly.gfa > fixed.gfa
+vg view -Fv fixed.gfa > g.vg
+```
 
 #### Installing R packages
 
