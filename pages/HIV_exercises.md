@@ -138,6 +138,10 @@ vg pack -i z.pack -d >base.tsv   # a table representing per-bp coverage
 vg pack -i z.pack -D >edge.tsv   # a table with edge coverage
 ```
 
+#### aligning long reads with vg
+
+`vg map` has a long read alignment mode. To use it, set `vg map -m long ...`.
+
 <br/>
 
 ### Back
