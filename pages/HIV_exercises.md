@@ -17,7 +17,7 @@ The data were are using for this is based an artifical lab mix of five viruses:
 
 The five reference sequences underlying the mix can be find in the above git repository, see at https://github.com/cbg-ethz/5-virus-mix/blob/master/data/REF.fasta.
 
-At home, you can rely on sra-tools (more specifically `fastq-dump`) to download data from SRA. At GTPB, Illumina and PacBio data is already available at your workstations.
+At home, you can rely on sra-tools (more specifically `fastq-dump`) to download data from SRA. At GTPB, Illumina and PacBio data is already available at your workstations in the folder `/media/gtpb_shared_drive/To_Participant/`.
 
 More concretely, we ask you to work on the following tasks in groups of four (in any order, based on your groups preferences):
 
@@ -83,7 +83,7 @@ K03455.1	Genbank	CDS	6225	8795	.	+	0	ID=cds4;Parent=rna0;Dbxref=NCBI_GP:AAB50262
 
 #### Circular HIV genome confusion
 
-An earlier version of the [ideas.md](pages/ideas.html) walkthrough suggested that you should circularize the HIV genome. This is not the case, and the apparent circularity of the REF.fasta results from either homology between the start and end of some of the strains or from the generation of the references based on plasmid resequencing.
+An earlier version of the [ideas.md](./ideas.md) walkthrough suggested that you should circularize the HIV genome. This is not the case, and the apparent circularity of the REF.fasta results from either homology between the start and end of some of the strains or from the generation of the references based on plasmid resequencing.
 
 #### GFA output and Bandage
 
