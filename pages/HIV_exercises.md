@@ -142,6 +142,27 @@ vg pack -i z.pack -D >edge.tsv   # a table with edge coverage
 
 `vg map` has a long read alignment mode. To use it, set `vg map -m long ...`.
 
+#### visualizing a subset of a graph and GAM
+
+This is unfortunately kind of tricky.
+First, we need to collect a subgraph:
+
+```
+vg find -x z.xg -n 2430 -c 10 >node2430.vg
+```
+
+Then, we need a GAM file that's been sorted and indexed with `vg gamsort`:
+
+```
+vg gamsort -i z.gam.idx z.raw.gam >z.gam
+```
+
+Now, we can use `vg find` to collect the GAM subset touching the graph:
+
+```
+vg find -x z.xg -A node2430.vg >z.node2430.gam
+```
+
 <br/>
 
 ### Back
