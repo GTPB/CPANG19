@@ -53,7 +53,7 @@ There is a number of VG subcommands that can aid your tasks today, in particular
 - GraphAligner
 
 ### Error correction
-The error correction pipeline has been installed into your computers in the path `~/cpang19/day2/error_correction`. To run it, change the parameters and file paths in config.yaml, and then run the command `snakemake --cores 8 all`.
+The error correction pipeline has been installed into your computers in the path `~/cpang19/day2/error_correction`. To run it, change the parameters and file paths in config.yaml, and then run the command `snakemake --cores 8 all`. You have to adjust the parmeters for this specific dataset. Use `GenomeSize: 10000`, `ShortreadCoverage: 9000` and `Abundance: 50`
 
 <br/>
 
