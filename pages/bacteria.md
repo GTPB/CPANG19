@@ -83,7 +83,7 @@ Then create a CSV file with the node labels:
 
 	grep -P '^S' < graph.withpaths.gfa | cut -f 2,4 | sed '1iNode\tPath\' | sed 's/\\t/\t/g' > graph.paths.csv
 
-Then load the CSV into Bandage using File->Load CSV data and select the file. Check the box "CSV data:" in the left panel under "Node labels"
+Then load the CSV into Bandage using File->Load CSV data and select the file. Check the box "CSV data:" in the left panel under "Node labels". The label for each node will show the paths that pass through the node: name, orientation (+ forward / - backward) and position along the path.
 
 ### Filtering alignments
 
