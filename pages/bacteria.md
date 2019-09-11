@@ -79,10 +79,10 @@ In contrast to typical pruning, we may need to do some pruning to the base refer
 If this is a problem, we can remove high-degree nodes (nodes with many edges) from the graph:
 
 ```
-vg mod -D 8 raw.vg >out.vg
+vg mod -M 8 raw.vg >out.vg
 ```
 
-We also need to "chop" nodes
+In any event, we also need to "chop" nodes
 to be shorter than a given length, so that GCSA2 can index the graph.
 We also and sort the output to make the ids space increase through the linear components of the graph, which helps the mapper.
 
