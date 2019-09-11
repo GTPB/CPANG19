@@ -34,7 +34,7 @@ All the datasets used for this training course is available throughout the docum
 <br/>
 
 ### Day 3
-#### [Slides](assets/Computational_Pangenomics_CPANG19-(day3).pdf) [PDF Download]
+#### [Slides](https://docs.google.com/presentation/d/1RrfXMI7mpRtYu-H5OswPL2LZcIN_OC0NuI_m6mwU38U/edit?usp=sharing) [PDF Download]
 #### Practical 3: [Bacteria](pages/bacteria.md)
 
 <br/>
