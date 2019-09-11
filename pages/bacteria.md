@@ -107,7 +107,7 @@ Single end mapping is fine.
 
 You can view the position of the nodes along the paths in the graph using Bandage. First use these commands to insert the paths into the graph:
 
-	xg -g graph.gfa - graph.gfa.xg
+	xg -g graph.gfa -o graph.gfa.xg
 	xg -i graph.gfa.xg -G > graph.withpaths.gfa
 
 Then create a CSV file with the node labels:
