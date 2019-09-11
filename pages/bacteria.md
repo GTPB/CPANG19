@@ -82,12 +82,22 @@ If this is a problem, we can remove high-degree nodes (nodes with many edges) fr
 vg mod -M 8 raw.vg >out.vg
 ```
 
-In any event, we also need to "chop" nodes
-to be shorter than a given length, so that GCSA2 can index the graph.
+In any event, we also need to "chop" nodes to be shorter than a given length, so that GCSA2 can index the graph.
 We also and sort the output to make the ids space increase through the linear components of the graph, which helps the mapper.
 
 ```
 vg mod -X 32 raw.vg | vg sort - >out.vg
+```
+
+Bringing it together, we want to first remove the high-degree nodes from what will become our "reference" graph for a particular analysis, build the xg index from that, then prune and build the GCSA index on the pruned graph.
+For mapping, we bring these two results back together:
+
+```
+vg view -Fv base.gfa | vg mod -X 32 - | vg mod -M 8 - | vg sort - >base.vg
+vg index -x base.xg base.vg
+vg prune -k 16 -e 3 base.vg >prune.vg
+vg index -g base.gcsa -k 16 prune.vg
+vg map -f reads.fq.gz -x base.xg -g base.gcsa >aln.gam
 ```
 
 Another consideration is that it's often very difficult to map paired end reads against the graph.
