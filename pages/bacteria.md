@@ -82,11 +82,16 @@ If this is a problem, we can remove high-degree nodes (nodes with many edges) fr
 vg mod -D 8 raw.vg >out.vg
 ```
 
-We also need to "chop" nodes to be shorter than a given length, so that GCSA2 can index the graph.
+We also need to "chop" nodes
+to be shorter than a given length, so that GCSA2 can index the graph.
+We also and sort the output to make the ids space increase through the linear components of the graph, which helps the mapper.
 
 ```
-vg mod -X 32 raw.vg >out.vg
+vg mod -X 32 raw.vg | vg sort - >out.vg
 ```
+
+Another consideration is that it's often very difficult to map paired end reads against the graph.
+Single end mapping is fine.
 
 ### Viewing paths with Bandage
 
