@@ -12,11 +12,10 @@ In this practical, we explore ways of implementing such a gene-level pan-genome 
 ## Data
 Today, we will mostly work on E. coli data. On your workstations you find the following data sets:
 
-- `data/bacteria/ncbi-whole-genomes` one file for each complete E. coli strain present at NCBI, containing the **complete reference genome** for that strain,
-- `data/bacteria/ncbi-genes` one file for each of these NCBI E. coli strain containing one line per **gene**,
-- `data/bacteria/reads` whole genome sequence data for a (random) subset of 10 E.coli strains for this study: [Earle et al., 2015](http://dx.doi.org/10.1038/nmicrobiol.2016.41),
-- `data/bacteria/contigs` the result of running the Minia3 assembler on the reads provided in the above directory.
-- In case you need read data (and the corresponding assemblies) we can provide more (241 in total).
+- `/media/gtpb_shared_drive/To_Participant/bacteria/ncbi-whole-genomes` one file for each complete E. coli strain present at NCBI, containing the **complete reference genome** for that strain,
+- `/media/gtpb_shared_drive/To_Participant/bacteria/ncbi-genes` one file for each of these NCBI E. coli strain containing one line per **gene**,
+- `/media/gtpb_shared_drive/To_Participant/bacteria/reads` whole genome sequence data for a (random) subset of 10 E.coli strains for this study: [Earle et al., 2015](http://dx.doi.org/10.1038/nmicrobiol.2016.41),
+- `/media/gtpb_shared_drive/To_Participant/bacteria/contigs` the result of running the Minia3 assembler on the reads provided in the above directory.
 
 <br/>
 
@@ -89,6 +88,19 @@ We also need to "chop" nodes to be shorter than a given length, so that GCSA2 ca
 vg mod -X 32 raw.vg >out.vg
 ```
 
+### Viewing paths with Bandage
+
+You can view the position of the nodes along the paths in the graph using Bandage. First use these commands to insert the paths into the graph:
+
+	xg -g graph.gfa - graph.gfa.xg
+	xg -i graph.gfa.xg -G > graph.withpaths.gfa
+
+Then create a CSV file with the node labels:
+
+	grep -P '^S' < graph.withpaths.gfa | cut -f 2,4 | sed '1iNode\tPath\' | sed 's/\\t/\t/g' > graph.paths.csv
+
+Then load the CSV into Bandage using File->Load CSV data and select the file. Check the box "CSV data:" in the left panel under "Node labels". The label for each node will show the paths that pass through the node: name, orientation (+ forward / - backward) and position along the path.
+
 ### Filtering alignments
 
 You may want to filter alignments to only keep those with a positive score (that are mapped). One easy way to do this is to use [jq](https://stedolan.github.io/jq/). If we want to keep alignments that are aligned we can do the following:
@@ -124,6 +136,13 @@ vg map -d x -f reads.fq.gz -j | pv -l >/dev/null
 ```
 
 <br/>
+
+### Extrace gene sequences
+
+	for f in *.gff.gz; do b=$(echo $f | cut -d '.' -f 1,2); \
+	awk '{if ($3 == "gene") print;}' < $f | sed 's/ID=[^;]*;\(Dbxref=[^;]*;\)\?Name=\([^;]*\);gbkey=[^;]*;\(gene=[^;]*;\)\?gene_biotype=[^;]*;locus_tag=.*/\2/g' | awk '{print $1 "\t" $2 "\t" $9 "\t" $4 "\t" $5 "\t" $6 "\t" $7 "\t" $8}' > fix.gff; \
+	bedtools getfasta -fi $b.fna -bed fix.gff -name > $b.fa; \
+	done;
 
 ### Back
 
