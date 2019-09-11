@@ -74,7 +74,7 @@ Bandage &
 
 ### Viewing paths with Bandage
 
-First use these commands to insert the paths into the graph:
+You can view the position of the nodes along the paths in the graph using Bandage. First use these commands to insert the paths into the graph:
 
 	xg -g graph.gfa - graph.gfa.xg
 	xg -i graph.gfa.xg -G > graph.withpaths.gfa
