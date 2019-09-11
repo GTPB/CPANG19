@@ -73,6 +73,22 @@ vg view SRR3050857_merged.fastq.contigs.vg >SRR3050857_merged.fastq.contigs.+1.g
 Bandage &
 ```
 
+### Pruning assembly graphs
+
+Assembly graphs can have rather complicated regions in them. We need to get rid of these to run alignment against the graph.
+In contrast to typical pruning, we may need to do some pruning to the base reference graph that we feed to vg map, and further pruning to the graph that's given to GCSA indexing.
+If this is a problem, we can remove high-degree nodes (nodes with many edges) from the graph:
+
+```
+vg mod -D 8 raw.vg >out.vg
+```
+
+We also need to "chop" nodes to be shorter than a given length, so that GCSA2 can index the graph.
+
+```
+vg mod -X 32 raw.vg >out.vg
+```
+
 ### Filtering alignments
 
 You may want to filter alignments to only keep those with a positive score (that are mapped). One easy way to do this is to use [jq](https://stedolan.github.io/jq/). If we want to keep alignments that are aligned we can do the following:
