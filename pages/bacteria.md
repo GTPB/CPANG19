@@ -15,7 +15,7 @@ Today, we will mostly work on E. coli data. On your workstations you find the fo
 - `/media/gtpb_shared_drive/To_Participant/bacteria/ncbi-whole-genomes` one file for each complete E. coli strain present at NCBI, containing the **complete reference genome** for that strain,
 - `/media/gtpb_shared_drive/To_Participant/bacteria/ncbi-genes` one file for each of these NCBI E. coli strain containing one line per **gene**,
 - `/media/gtpb_shared_drive/To_Participant/bacteria/reads` whole genome sequence data for a (random) subset of 10 E.coli strains for this study: [Earle et al., 2015](http://dx.doi.org/10.1038/nmicrobiol.2016.41),
-- `data/bacteria/contigs` the result of running the Minia3 assembler on the reads provided in the above directory.
+- `/media/gtpb_shared_drive/To_Participant/bacteria/contigs` the result of running the Minia3 assembler on the reads provided in the above directory.
 
 <br/>
 
@@ -71,6 +71,19 @@ It's now possible to view the graph in GFA format in Bandage to ensure that the 
 vg view SRR3050857_merged.fastq.contigs.vg >SRR3050857_merged.fastq.contigs.+1.gfa
 Bandage &
 ```
+
+### Viewing paths with Bandage
+
+First use these commands to insert the paths into the graph:
+
+	xg -g graph.gfa - graph.gfa.xg
+	xg -i graph.gfa.xg -G > graph.withpaths.gfa
+
+Then create a CSV file with the node labels:
+
+	grep -P '^S' < graph.withpaths.gfa | cut -f 2,4 | sed '1iNode\tPath\' | sed 's/\\t/\t/g' > graph.paths.csv
+
+Then load the CSV into Bandage using File->Load CSV data and select the file. Check the box "CSV data:" in the left panel under "Node labels"
 
 ### Filtering alignments
 
