@@ -13,7 +13,11 @@ Because the MHC region is so polymorphic, it is one of the regions of the human 
 
 ## Constructing an MHC graph
 
-Graph genome tools offer one possibility for how we could use the alternate scaffolds. The first step is to build a graph. You have a few options for how you might accomplish this. The most obvious way is probably an alignment method. You have already seen `vg msga`, which is one option. However, you may also want to use a different MSA tool. `vg` has a method to construct a graph directly from a multiple sequence alignment in either MAF or Clustal format. The following example shows how you could do this using Clustal Omega.
+Graph genome tools offer one possibility for how we could use the alternate scaffolds. The first step is to build a graph. You have a few options for how you might accomplish this. The most obvious way is probably an alignment method. You have already seen `seqwish`, `vg msga`, and `minigraph`, which provide several different methods to build graphs from sequences. 
+
+### MSA based variation graphs
+
+However, you may also want to use a different MSA tool. `vg` has a method to construct a graph directly from a multiple sequence alignment in either MAF or Clustal format. The following example shows how you could do this using Clustal Omega.
 
     # use Clustal Omega to make a multiple sequence alignment
     clustalo -i sequences.fasta --outfmt clustal > mult_seq_aln.clustal
@@ -28,7 +32,7 @@ It should be noted that there are other methods that you could use to build a gr
 
 <br/>
 
-## Choosing MHC scaffolds
+## MHC typing using variation graphs
 
 An interesting question to ask for a new sample is which MHC scaffold (or pair of scaffolds) will represent its MHC region best. In reality, any individual's MHC haplotypes are unlikely to match any of the MHC scaffolds well. However, they will have recombinant subsequences in common with the scaffolds. Moreover, previous studies have demonstrated benefits in downstream application for choosing more representative sequences for the reference, even if these sequences are imperfect (see Dilthey, et al. 2014). 
 
