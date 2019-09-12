@@ -22,9 +22,9 @@ Graph genome tools offer one possibility for how we could use the alternate scaf
     # -M = input file, -F = format, -m = max node size
     vg construct -M mult_seq_aln.clustal -F clustal -m 32 > msa.vg
 
-You are free to try this method, but be warned that the MHC region is large and it may overwhelm MSA tools that were designed for smaller sequences. We have provided you with the GRC's own MSA of the MHC alternate scaffolds in MAF format, but you should not feel bound to use it. If you are interested, you might want to try making an MSA graph from other sequences as well (e.g. the HIV sequences from two days ago).
+You are free to try this method, but be warned that the MHC region is large and it may overwhelm MSA tools that were designed for smaller sequences. If you are interested, you might want to try making an MSA graph from other sequences as well (e.g. the HIV sequences from two days ago).
 
-It should be noted that there are other methods that you could use to build a graph of the MHC region. For instance, you could find a VCF and use `vg construct -v`. You could also use an assembly tool to build an assembly graph and construct a VG from the GFA file.
+It should be noted that there are other methods that you could use to build a graph of the MHC region. For instance, you could find a VCF and use `vg construct -v`. You could use an assembly tool to build an assembly graph and construct a VG from the GFA file.
 
 <br/>
 
@@ -32,7 +32,9 @@ It should be noted that there are other methods that you could use to build a gr
 
 An interesting question to ask for a new sample is which MHC scaffold (or pair of scaffolds) will represent its MHC region best. In reality, any individual's MHC haplotypes are unlikely to match any of the MHC scaffolds well. However, they will have recombinant subsequences in common with the scaffolds. Moreover, previous studies have demonstrated benefits in downstream application for choosing more representative sequences for the reference, even if these sequences are imperfect (see Dilthey, et al. 2014). 
 
-We have provided for you a set of sequencing reads from the Human Genome Structural Variation Consortium. They come from three parent-child trios: the Yoruban trio NA19238-NA19239-NA19240, the Han Chinese trio HG00512-HG00513-HG00514, and the Puerto Rican trio HG00732-HG00733-HG00734. In each trio, the highest-numbered sample is the child. You will have both Illumina paired end short reads and PacBio long reads. Rather than providing the entire genomic dataset, we have extracted reads that mapped to the MHC region or one of the alternate scaffolds using a conventional read mapper. Of course, that means that these datasets are already biased by mapping to a linear reference. However, the volume of data for a full genomic dataset is probably too computationally demanding for an exercise in this environment. High coverage datasets may also be challenging, so we have also provided downsampled lower coverage files. 
+We have provided for you a set of sequencing reads from the Human Genome Structural Variation Consortium in the path `/media/gtpb_shared_drive/To_Participant/MHC/TrioData`. They come from a parent-child: the Han Chinese trio HG00512-HG00513-HG00514. The highest-numbered sample is the child. You will have both Illumina paired end short reads and PacBio long reads. Rather than providing the entire genomic dataset, we have extracted reads that mapped to the MHC region or one of the alternate scaffolds using a conventional read mapper. Of course, that means that these datasets are already biased by mapping to a linear reference. However, the volume of data for a full genomic dataset is probably too computationally demanding for an exercise in this environment.
+
+We have also provided you a different set of reds for the individual HG002 in the path `/media/gtpb_shared_drive/To_Participant/MHC/HG002`. This folder contains CCS reads and ultralong ONT reads for the MHC region of this individual. The reads are split by haplotype using trio binning and phasing. The files `*.H1.*` contains reads from the first haplotype, `*.H2.*` from the second haplotype and `*.untagged.*` contains reads which could not be confidently assigned to a haplotype.
 
 <br/>
 
@@ -42,8 +44,17 @@ In order to choose an MHC scaffold, it might be useful to perform variant callin
 
 VG has two methods for genotyping variants, but in the interest of simplicity we will only present one here. Note that to output a VCF, you will need to have constructed your graph using a method that preserved the reference sequence as a path. 
 
-    # -v for VCF output using the -r path as the reference  
-    vg genotype -G mapped.gam -r pathname -v graph.vg 
+    vg construct -r small/x.fa -v small/x.vcf.gz >x.vg
+	vg index -x x.xg -g x.gcsa -k 16 x.vg
+	vg map -d x -G <(vg sim -n 1000 -e 0.01 -i 0.005 -l 50 -a -x x.xg) >aln.gam
+
+augment the novel alleles into the graph to genotype
+
+	vg augment x.vg aln.gam -A aln.aug.gam >x.aug.vg
+	vg index -x x.aug.xg x.aug.vg
+	vg pack -x x.aug.xg -g aln.aug.gam -o aln.aug.gam.pack
+	vg call x.aug.xg -k aln.aug.gam.pack -s rando >rando.vcf
+
 
 If this is too slow for you, it is also possible to speed up the execution by building a RocksDB index of the GAM first with `vg index` and then passing that in as a positional argument in place of `-G`.
 
