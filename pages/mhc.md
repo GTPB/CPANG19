@@ -5,8 +5,6 @@ title: The MHC region
 
 The MHC (major histocompatiblity complex) is a region on chromosome 6 in the human genome. It is enriched for  genes of the immune system, including the HLA (human leukocyte antigen) genes. Unlike antibodies and T-cell receptors, the HLA genes do not undergo somatic hypermutation or genomic rearrangement to achieve high diversity. However, they do display antigen to antibodies and T-cell receptors, so they are still considered part of the adaptive immune system. Accordingly, they still benefit from high genomic diversity, similarly to antibodies and T-cell receptors; any haplotype that becomes too common is susceptible to epidemic if a disease agent evolves the capacity to evade it. Since the MHC lacks the capacity for genomic rearrangement, it must rely on natural selection to achieve diversity, and is thusly under intense diversifying selection. For this reason, the MHC region is one of the most wildly polymorphic regions of the human genome. Moreover, it is enriched for complex structural variation as well as point variants.
 
-![MHC](http://www.sciscogenetics.com/wp-content/uploads/2013/05/MHC.png)
-
 Because the MHC region is so polymorphic, it is one of the regions of the human genome that is not well-served by linear references. Recognizing this limitation, starting with with GRCh38 the Genome Reference Consortium (GRC) began distributing a set of alternate scaffolds for the MHC (and some other regions) along with the reference sequence. However, many genomics tools do not yet support these alternate scaffolds well. 
 
 <br/>
@@ -41,6 +39,10 @@ We have provided for you a set of sequencing reads from the Human Genome Structu
 We have also provided you a different set of reds for the individual HG002 in the path `/media/gtpb_shared_drive/To_Participant/MHC/HG002`. This folder contains CCS reads and ultralong ONT reads for the MHC region of this individual. The reads are split by haplotype using trio binning and phasing. The files `*.H1.*` contains reads from the first haplotype, `*.H2.*` from the second haplotype and `*.untagged.*` contains reads which could not be confidently assigned to a haplotype.
 
 The reference alles for each HLA gene are in `/media/gtpb_shared_drive/To_Participant/MHC/IMGT_alleles`. The alleles are grouped per gene, containing either genomice sequence (`*_gen.fasta`), coding sequences (`*_nuc.fasta`) and protein sequences (`*_prot.fasta`).
+Use these to establish HLA genotypes for each genome.
+
+The GRCh38 ALTs (alternative haplotypes) for the MHC are provided in `/media/gtpb_shared_drive/To_Participant/MHC/MHC.fa.gz`.
+These can be used as the basis for a reference model of the MHC.
 
 <br/>
 
