@@ -1,1 +1,1 @@
-vg view -a alns.gam | jq '"P\t" + .name + "\t" + ([.path.mapping[].position | ((.node_id | tostring) + (if .is_reverse != null then "-" else "+" end))] | join(",")) + "\t*"' | tr -d '"' | sed 's/\\t/\t/g'
+vg view -a alns.gam | jq 'select(.path != null) | "P\t" + .name + "\t" + ([.path.mapping[].position | ((.node_id | tostring) + (if .is_reverse != null then "-" else "+" end))] | join(",")) + "\t*"' | tr -d '"' | sed 's/\\t/\t/g' | grep -v null >> graph.gfa
