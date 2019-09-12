@@ -36,6 +36,8 @@ We have provided for you a set of sequencing reads from the Human Genome Structu
 
 We have also provided you a different set of reds for the individual HG002 in the path `/media/gtpb_shared_drive/To_Participant/MHC/HG002`. This folder contains CCS reads and ultralong ONT reads for the MHC region of this individual. The reads are split by haplotype using trio binning and phasing. The files `*.H1.*` contains reads from the first haplotype, `*.H2.*` from the second haplotype and `*.untagged.*` contains reads which could not be confidently assigned to a haplotype.
 
+The reference alles for each HLA gene are in `/media/gtpb_shared_drive/To_Participant/MHC/IMGT_alleles`. The alleles are grouped per gene, containing either genomice sequence (`*_gen.fasta`), coding sequences (`*_nuc.fasta`) and protein sequences (`*_prot.fasta`).
+
 <br/>
 
 ## Variant calling in VG
