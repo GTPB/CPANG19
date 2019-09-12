@@ -40,9 +40,7 @@ We have also provided you a different set of reds for the individual HG002 in th
 
 ## Variant calling in VG
 
-In order to choose an MHC scaffold, it might be useful to perform variant calling against the graph you construct. However, this is not the only route forward. Think about how you would use the results before you devote too much time to it.
-
-VG has two methods for genotyping variants, but in the interest of simplicity we will only present one here. Note that to output a VCF, you will need to have constructed your graph using a method that preserved the reference sequence as a path. 
+In order to choose an MHC scaffold, it might be useful to perform variant calling against the graph you construct. However, this is not the only route forward. Think about how you would use the results before you devote too much time to it. Note that to output a VCF, you will need to have constructed your graph using a method that preserved the reference sequence as a path. 
 
     vg construct -r small/x.fa -v small/x.vcf.gz >x.vg
 	vg index -x x.xg -g x.gcsa -k 16 x.vg
@@ -54,9 +52,6 @@ augment the novel alleles into the graph to genotype
 	vg index -x x.aug.xg x.aug.vg
 	vg pack -x x.aug.xg -g aln.aug.gam -o aln.aug.gam.pack
 	vg call x.aug.xg -k aln.aug.gam.pack -s rando >rando.vcf
-
-
-If this is too slow for you, it is also possible to speed up the execution by building a RocksDB index of the GAM first with `vg index` and then passing that in as a positional argument in place of `-G`.
 
 How could you use these variant calls to determine which MHC scaffold(s) are most appropriate for this sample? Since you have trio datasets may be interesting to look at Mendelian consistency in your approach.
 
