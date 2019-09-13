@@ -46,6 +46,7 @@ All the datasets used for this training course is available throughout the docum
 
 ### Day 5
 #### [Slides](https://docs.google.com/presentation/d/1Yabcw_M5gCcCv9DJQ4d3Fp0X-GzooP-y08Qp0Fb7Iuc/edit?usp=sharing)
+#### [related slides](https://docs.google.com/presentation/d/10KDUnRJyKwi5q9khCcb0C9Mb52XcGZbfvFFF0nNCbGg/edit?usp=sharing)
 #### Practical 5: [MHC (continued)](pages/mhc.md)
 
 
