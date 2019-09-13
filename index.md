@@ -45,7 +45,6 @@ All the datasets used for this training course is available throughout the docum
 <br/>
 
 ### Day 5
-#### [Slides](assets/Computational_Pangenomics_CPANG19-(day5).pdf) [PDF Download]
 #### Practical 5: [MHC (continued)](pages/mhc.md)
 
 
