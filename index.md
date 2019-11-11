@@ -15,7 +15,7 @@ This course is oriented towards biologists and bioinformaticians with at least a
 
 ---
 
-## Course Documentation 
+## Course Documentation
 All the datasets used for this training course is available throughout the documentation.
 
 <br/>
@@ -59,3 +59,7 @@ All the datasets used for this training course is available throughout the docum
 ---
 
 The source for this course webpage is [on github](https://github.com/GTPB/CPANG19).
+
+<br>
+
+<a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">CPANG19</span> by <span xmlns:cc="http://creativecommons.org/ns#" property="cc:attributionName">GTPB</span> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
