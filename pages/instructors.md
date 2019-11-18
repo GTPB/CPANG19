@@ -2,6 +2,13 @@
 layout: page
 title: Instructors
 description: CPANG19 Course instructors description
+schemadotorg:
+  "@context": http://schema.org/
+  "@type": CreativeWork
+  "genre": TrainingMaterial
+  isPartOf:
+      url: "https://gtpb.github.io/CPANG19/"
+      name: "CPANG19 - Computational PANGenomics"
 ---
 
 ### Erik Garrison
@@ -11,7 +18,7 @@ description: CPANG19 Course instructors description
 
 [Erik Garrison](http://hypervolu.me/~erik/erik_garrison.html)s a Postdoctoral fellow at the University of California,Santa Cruz. His research has focused on the development of a software toolkit for practical pangenomics: [vg](https://github.com/vgteam/vg).
 
-He has eight years of experience in genomics, where he has worked on the development of sequencing systems, participated in large scale sequencing projects such as the [1000 Genomes Project](http://www.internationalgenome.org/), and authored popular bioinformatics software such as the [freebayes](https://github.com/ekg/freebayes) variant caller. 
+He has eight years of experience in genomics, where he has worked on the development of sequencing systems, participated in large scale sequencing projects such as the [1000 Genomes Project](http://www.internationalgenome.org/), and authored popular bioinformatics software such as the [freebayes](https://github.com/ekg/freebayes) variant caller.
 
 Raised in Kentucky, Erik obtained an undergraduate degree in the social sciences from Harvard University. After graduation he worked at Harvard Medical School, One Laptop Per Child, and Boston College before beginning his studies at the Sanger Institute.
 

@@ -1,6 +1,13 @@
 ---
 layout: page
 title: Learning vg on toy examples
+schemadotorg:
+  "@context": http://schema.org/
+  "@type": CreativeWork
+  "genre": TrainingMaterial
+  isPartOf:
+      url: "https://gtpb.github.io/CPANG19/"
+      name: "CPANG19 - Computational PANGenomics"
 ---
 
 ### Learning objectives
@@ -237,4 +244,3 @@ Use Bandage and odgi to visualize graphs (convert to GFA first).
 ### Back
 
 Back to [main page](../index.md).
-

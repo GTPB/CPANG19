@@ -1,6 +1,13 @@
 ---
 layout: page
 title: Taking bacterial pan-genomes to the sequence level
+schemadotorg:
+  "@context": http://schema.org/
+  "@type": CreativeWork
+  "genre": TrainingMaterial
+  isPartOf:
+      url: "https://gtpb.github.io/CPANG19/"
+      name: "CPANG19 - Computational PANGenomics"
 ---
 
 Traditionally, pan-genomes for bacteria are gene based. That is, you study the set of genes found at a certain taxonomic unit, see [Tettelin et al., 2015](http://dx.doi.org/10.1016/j.mib.2014.11.016) for a review.

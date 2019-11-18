@@ -1,8 +1,44 @@
 ---
 layout: page
-title: CPANG19
-tagline: Computational PANGenomics
-description: Computational Pangenomics Course taught at GTPB in  2019
+schemadotorg:
+  "@context": http://schema.org/
+  "@type": CreativeWork
+  "genre": TrainingMaterial
+
+  # Course details
+       # "name" -> The acronym of the course
+       # "about" -> The extended name of the course
+       # "description" -> Short description of the course
+  name: "CPANG19 - Computational PANGenomics"
+  description: "Training Material aimed in the exploration of modern bioinformatic tools that allow researchers to use pangenomes as their reference system when engaging in studies of organisms of all types."
+
+  # Keywords -> Consult EDAM:Topic
+  keywords:  "http://edamontology.org/topic_0622"
+
+  # Audience -> Following Elixir-Tess input
+  audience: ["Academia/ Research Institution", "Industry", "Non-Profit Organisation", "Healthcare"]
+
+  # Author info
+  author:
+    - "@type": Organization
+      name: "The Gulbenkian Training Programme in Bioinformatics"
+      alternateName: "GTPB"
+      sameAs: "gtpb.igc.gulbenkian.pt/bicourses/index.html"
+
+  # predominant type of learning resources
+  "learningResourceType": ["presentation", "exercise", "scripts", "handout"]
+
+  # Contributor info
+  contributor:
+    - "@type": Person
+      name: "Erik Garrison"
+    - "@type": Person
+      name: "Mikko Rautiainen"
+
+  # License & Language & url
+  license: https://creativecommons.org/licenses/by/4.0/
+  inLanguage: "en-us"
+  url: "https://gtpb.github.io/CPANG19/"
 ---
 
 ![CPANG18](/assets/Header.png)

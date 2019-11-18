@@ -1,6 +1,13 @@
 ---
 layout: page
 title: Long reads
+schemadotorg:
+  "@context": http://schema.org/
+  "@type": CreativeWork
+  "genre": TrainingMaterial
+  isPartOf:
+      url: "https://gtpb.github.io/CPANG19/"
+      name: "CPANG19 - Computational PANGenomics"
 ---
 
 Today you will learn how to align long reads to graphs and how to error correct long reads with short reads. The goal is to give the participants the technical skills to run the tools and interprete the results, followed by freeform discussion and application of the tools to the participants' research projects.

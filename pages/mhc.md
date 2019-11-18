@@ -1,17 +1,24 @@
 ---
 layout: page
 title: The MHC region
+schemadotorg:
+  "@context": http://schema.org/
+  "@type": CreativeWork
+  "genre": TrainingMaterial
+  isPartOf:
+      url: "https://gtpb.github.io/CPANG19/"
+      name: "CPANG19 - Computational PANGenomics"
 ---
 
 The MHC (major histocompatiblity complex) is a region on chromosome 6 in the human genome. It is enriched for  genes of the immune system, including the HLA (human leukocyte antigen) genes. Unlike antibodies and T-cell receptors, the HLA genes do not undergo somatic hypermutation or genomic rearrangement to achieve high diversity. However, they do display antigen to antibodies and T-cell receptors, so they are still considered part of the adaptive immune system. Accordingly, they still benefit from high genomic diversity, similarly to antibodies and T-cell receptors; any haplotype that becomes too common is susceptible to epidemic if a disease agent evolves the capacity to evade it. Since the MHC lacks the capacity for genomic rearrangement, it must rely on natural selection to achieve diversity, and is thusly under intense diversifying selection. For this reason, the MHC region is one of the most wildly polymorphic regions of the human genome. Moreover, it is enriched for complex structural variation as well as point variants.
 
-Because the MHC region is so polymorphic, it is one of the regions of the human genome that is not well-served by linear references. Recognizing this limitation, starting with with GRCh38 the Genome Reference Consortium (GRC) began distributing a set of alternate scaffolds for the MHC (and some other regions) along with the reference sequence. However, many genomics tools do not yet support these alternate scaffolds well. 
+Because the MHC region is so polymorphic, it is one of the regions of the human genome that is not well-served by linear references. Recognizing this limitation, starting with with GRCh38 the Genome Reference Consortium (GRC) began distributing a set of alternate scaffolds for the MHC (and some other regions) along with the reference sequence. However, many genomics tools do not yet support these alternate scaffolds well.
 
 <br/>
 
 ## Constructing an MHC graph
 
-Graph genome tools offer one possibility for how we could use the alternate scaffolds. The first step is to build a graph. You have a few options for how you might accomplish this. The most obvious way is probably an alignment method. You have already seen `seqwish`, `vg msga`, and `minigraph`, which provide several different methods to build graphs from sequences. 
+Graph genome tools offer one possibility for how we could use the alternate scaffolds. The first step is to build a graph. You have a few options for how you might accomplish this. The most obvious way is probably an alignment method. You have already seen `seqwish`, `vg msga`, and `minigraph`, which provide several different methods to build graphs from sequences.
 
 ### MSA based variation graphs
 
@@ -19,7 +26,7 @@ However, you may also want to use a different MSA tool. `vg` has a method to con
 
     # use Clustal Omega to make a multiple sequence alignment
     clustalo -i sequences.fasta --outfmt clustal > mult_seq_aln.clustal
-    
+
     # convert the multiple sequence alignment to a VG file
     # -M = input file, -F = format, -m = max node size
     vg construct -M mult_seq_aln.clustal -F clustal -m 32 > msa.vg
@@ -32,7 +39,7 @@ It should be noted that there are other methods that you could use to build a gr
 
 ## MHC typing using variation graphs
 
-An interesting question to ask for a new sample is which MHC scaffold (or pair of scaffolds) will represent its MHC region best. In reality, any individual's MHC haplotypes are unlikely to match any of the MHC scaffolds well. However, they will have recombinant subsequences in common with the scaffolds. Moreover, previous studies have demonstrated benefits in downstream application for choosing more representative sequences for the reference, even if these sequences are imperfect (see Dilthey, et al. 2014). 
+An interesting question to ask for a new sample is which MHC scaffold (or pair of scaffolds) will represent its MHC region best. In reality, any individual's MHC haplotypes are unlikely to match any of the MHC scaffolds well. However, they will have recombinant subsequences in common with the scaffolds. Moreover, previous studies have demonstrated benefits in downstream application for choosing more representative sequences for the reference, even if these sequences are imperfect (see Dilthey, et al. 2014).
 
 We have provided for you a set of sequencing reads from the Human Genome Structural Variation Consortium in the path `/media/gtpb_shared_drive/To_Participant/MHC/TrioData`. They come from a parent-child: the Han Chinese trio HG00512-HG00513-HG00514. The highest-numbered sample is the child. You will have both Illumina paired end short reads and PacBio long reads. Rather than providing the entire genomic dataset, we have extracted reads that mapped to the MHC region or one of the alternate scaffolds using a conventional read mapper. Of course, that means that these datasets are already biased by mapping to a linear reference. However, the volume of data for a full genomic dataset is probably too computationally demanding for an exercise in this environment.
 
@@ -48,7 +55,7 @@ These can be used as the basis for a reference model of the MHC.
 
 ## Variant calling in VG
 
-In order to choose an MHC scaffold, it might be useful to perform variant calling against the graph you construct. However, this is not the only route forward. Think about how you would use the results before you devote too much time to it. Note that to output a VCF, you will need to have constructed your graph using a method that preserved the reference sequence as a path. 
+In order to choose an MHC scaffold, it might be useful to perform variant calling against the graph you construct. However, this is not the only route forward. Think about how you would use the results before you devote too much time to it. Note that to output a VCF, you will need to have constructed your graph using a method that preserved the reference sequence as a path.
 
     vg construct -r small/x.fa -v small/x.vcf.gz >x.vg
 	vg index -x x.xg -g x.gcsa -k 16 x.vg

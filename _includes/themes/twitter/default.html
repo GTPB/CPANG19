@@ -2,9 +2,13 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>{{ page.title }}</title>
-    {% if page.description %}<meta name="description" content="{{ page.description }}">{% endif %}
+    <title>{%if page.schemadotorg.name %}{{page.schemadotorg.name | split: " -" | first }}{% else %}{{ page.title }}{% endif %}</title>
+    {%if page.schemadotorg.name %}<meta name="description" content="{{ page.schemadotorg.description }}">{% endif %}
     <meta name="author" content="{{ site.author.name }}">
+
+    <script type="application/ld+json">
+         {{ page.schemadotorg | jsonify }}
+      </script>
 
     <!-- Enable responsive viewport -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -27,7 +31,7 @@
 
     <!-- Download button script -->
     <script async defer src="https://buttons.github.io/buttons.js"></script>
-    
+
   </head>
 
   <body>

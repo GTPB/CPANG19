@@ -1,6 +1,12 @@
 ---
 layout: page
-title: Missing genome reconstruction
+title: Missing genome reconstructionschemadotorg:
+  "@context": http://schema.org/
+  "@type": CreativeWork
+  "genre": TrainingMaterial
+  isPartOf:
+      url: "https://gtpb.github.io/CPANG19/"
+      name: "CPANG19 - Computational PANGenomics"
 ---
 
 Let's make a reference graph, align reads to it, and use surjection and k-means clustering to attempt to find the reads that map to the 5th genome. Finally, we'll assemble these and see if it matches known information about the fifth genome.
@@ -128,4 +134,3 @@ ggbiplot(pacbio.dist.pca) + geom_point(aes(color=pacbio.dist[5:nrow(pacbio.dist)
 ## Back
 
 Back to [main page](../index.md)
-
