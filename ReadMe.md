@@ -1,4 +1,5 @@
 ## CPANG19 - Computational PANGenomics
+[![DOI](https://zenodo.org/badge/190402248.svg)](https://zenodo.org/badge/latestdoi/190402248)
 
 ###  Instituto Gulbenkian de Ciência (IGC) - Oeiras, Portugal - September 9<sup>th</sup> - September 13<sup>th</sup> 2019
 
